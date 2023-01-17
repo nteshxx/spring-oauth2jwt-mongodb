@@ -17,6 +17,7 @@ import java.util.Collections;
 @RequiredArgsConstructor
 @NoArgsConstructor
 public class User implements UserDetails {
+	
     private static final long serialVersionUID = 2492260237844021571L;
 
 	@Id

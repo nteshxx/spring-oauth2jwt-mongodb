@@ -43,11 +43,11 @@ public class WebSecurity {
     UserDetailsManager userDetailsManager;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .antMatchers("/api/auth/*").permitAll()
-                        .anyRequest().authenticated()
+                                .antMatchers("/api/auth/*").permitAll()
+                                .anyRequest().authenticated()
                 )
                 .csrf().disable()
                 .cors().disable()
@@ -57,8 +57,8 @@ public class WebSecurity {
                 )
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling((exceptions) -> exceptions
-                        .authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
-                        .accessDeniedHandler(new BearerTokenAccessDeniedHandler())
+                                .authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
+                                .accessDeniedHandler(new BearerTokenAccessDeniedHandler())
                 );
         return http.build();
     }

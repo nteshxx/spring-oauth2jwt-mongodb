@@ -14,7 +14,8 @@ import java.text.MessageFormat;
 
 @Service
 public class UserManager implements UserDetailsManager {
-    @Autowired
+    
+	@Autowired
     UserRepository userRepository;
 
     @Autowired
